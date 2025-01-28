@@ -1,0 +1,28 @@
+# Exported from Render on 2024-09-02T14:12:25Z
+services:
+- type: web
+  name: UPLOADER-BOT-V4
+  runtime: python
+  repo: https://github.com/R4H4T069/URL_UPLOADER
+  plan: free
+  envVars:
+  - key: BOT_USERNAME
+    sync: false
+  - key: OWNER_ID
+    sync: false
+  - key: UPDATES_CHANNEL
+    sync: false
+  - key: LOG_CHANNEL
+    sync: false
+  - key: DATABASE_URL
+    sync: false
+  - key: API_HASH
+    sync: false
+  - key: API_ID
+    sync: false
+  - key: BOT_TOKEN
+    sync: false
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn app:app & python bot.py
+version: "1"
